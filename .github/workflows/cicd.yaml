@@ -66,4 +66,6 @@ jobs:
           passphrase: ${{secrets.PASSPHRASE}}
           script: |
             docker pull ghcr.io/vasilisk9812/cicd:main
-            docker-compose -f /test_cicd/docker-compose.yaml up -d
+            cd /home/yc-user/test_cicd
+            docker compose down
+            docker compose up -d
