@@ -65,7 +65,7 @@ jobs:
           key: ${{ secrets.KEY }}
           passphrase: ${{secrets.PASSPHRASE}}
           script: |
-            docker pull ghcr.io/vasilisk9812/cicd:main
             cd /home/yc-user/test_cicd
             docker compose down
+            docker pull ghcr.io/vasilisk9812/cicd:main
             docker compose up -d
