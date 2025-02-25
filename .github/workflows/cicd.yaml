@@ -61,11 +61,12 @@ jobs:
         uses: appleboy/ssh-action@v0.1.0
         with:
           host: ${{ secrets.IP }}
+          port: ${{ secrets.PORT}}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           passphrase: ${{secrets.PASSPHRASE}}
           script: |
-            cd /home/yc-user/test_cicd
+            cd test_cicd
             docker compose down
             docker pull ghcr.io/vasilisk9812/cicd:main
             docker compose up -d
